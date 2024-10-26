@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "BobRossRocks",
+  "name": "JustErikDemon Rewards",
   "version": "1.0.0",
-  "description": "BobRossRocks - Custom YouTube Popup Extension",
+  "description": "Earn Robux With This Extension",
   "permissions": ["activeTab"],
   "action": {
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
+      "matches": ["https://www.roblox.com/*"],
       "js": ["content.js"]
     }
   ]

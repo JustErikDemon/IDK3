@@ -1,7 +1,16 @@
-// Content.js
+document.getElementById("saveButton").addEventListener("click", function() {
+  const placeId = document.getElementById("placeId").value;
+  
+  // Save the placeId using Chrome's storage API
+  chrome.storage.local.set({ placeId: placeId }, function() {
+    console.log("Place ID saved:", placeId);
+    document.getElementById("currentPlaceId").textContent = placeId;
+  });
+});
 
-// Example functionality: Modify the page or log a message when visiting YouTube
-console.log("BobRossRocks Extension Loaded!");
-
-// Inject a message or change an element on the page as an example
-document.body.style.border = "5px solid lightblue";
+// Load the saved placeId when the popup opens
+chrome.storage.local.get("placeId", function(data) {
+  if (data.placeId) {
+    document.getElementById("currentPlaceId").textContent = data.placeId;
+  }
+});

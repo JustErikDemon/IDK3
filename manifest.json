@@ -1,16 +1,32 @@
 {
-    "manifest_version": 3,
-    "name": "Roblox Sidebar Enhancer",
-    "version": "1.0",
-    "description": "Adds JustErikDemon Rewards button to the Roblox sidebar.",
-    "permissions": [
-        "activeTab"
-    ],
-    "content_scripts": [
-        {
-            "matches": ["https://www.roblox.com/*"],
-            "js": ["content.js"],
-            "css": ["styles.css"]
-        }
-    ]
+  "manifest_version": 3,
+  "name": "JusteRIKDemon Button Extension",
+  "version": "1.0",
+  "description": "Adds JusteRIKDemon Button to the sidebar.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],  // Adjust this to the specific URL where you want to inject the script
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
 }

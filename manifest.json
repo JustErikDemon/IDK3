@@ -1,16 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "JustErikDemon Rewards",
+  "name": "JustErikDemon",
   "version": "1.0.0",
-  "description": "Earn Robux With This Extension",
-  "permissions": ["activeTab"],
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "description": "BobRossRocks - Custom Roblox Sidebar Button Extension",
+  "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
       "matches": ["https://www.roblox.com/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }

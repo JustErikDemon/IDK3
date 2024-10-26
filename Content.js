@@ -1,35 +1,36 @@
-// Wait until the sidebar is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-  // Check if the sidebar exists
-  const sidebar = document.querySelector(".left-col");
+  // Find the sidebar list element where we want to add the button
+  const sidebarList = document.querySelector(".left-col-list");
 
-  if (sidebar) {
-    // Create the new button
-    const rewardsButton = document.createElement("div");
-    rewardsButton.className = "sidebar-item"; // Apply a class similar to other sidebar items
+  if (sidebarList) {
+    // Create a new list item for the rewards button
+    const rewardsButton = document.createElement("li");
+    rewardsButton.style.display = "block";
+    
+    // Set up the inner HTML for the button
     rewardsButton.innerHTML = `
-      <a id="justErikDemonRewards" style="cursor: pointer;">
-        <span class="icon-nav-money"></span>
-        <span class="text-overflow">JustErikDemon Rewards</span>
+      <a class="dynamic-overflow-container text-nav" id="nav-justerikdemon-rewards" style="cursor: pointer;">
+        <div><span class="icon-nav-rewards"></span></div>
+        <span class="font-header-2 dynamic-ellipsis-item" title="JustErikDemon Rewards">JustErikDemon Rewards</span>
       </a>
     `;
     
-    // Append the button to the sidebar
-    sidebar.appendChild(rewardsButton);
+    // Append the new button to the sidebar list
+    sidebarList.appendChild(rewardsButton);
 
-    // Set up click event listener to open the modal
+    // Add click event to open the modal with iframe
     rewardsButton.addEventListener("click", function() {
       openRewardsModal();
     });
   }
 });
 
-// Function to open a modal with an iframe
+// Function to create and open the modal
 function openRewardsModal() {
-  // Check if modal already exists
+  // Check if modal already exists to avoid duplicates
   if (document.getElementById("rewardsModal")) return;
 
-  // Create the modal background
+  // Create modal background overlay
   const modalBackground = document.createElement("div");
   modalBackground.id = "rewardsModal";
   modalBackground.style.position = "fixed";
@@ -43,7 +44,7 @@ function openRewardsModal() {
   modalBackground.style.justifyContent = "center";
   modalBackground.style.zIndex = "10000";
 
-  // Create the iframe container
+  // Create container for iframe and close button
   const iframeContainer = document.createElement("div");
   iframeContainer.style.width = "80%";
   iframeContainer.style.height = "80%";
@@ -52,7 +53,7 @@ function openRewardsModal() {
   iframeContainer.style.overflow = "hidden";
   iframeContainer.style.position = "relative";
 
-  // Create the close button
+  // Create close button
   const closeButton = document.createElement("button");
   closeButton.textContent = "X";
   closeButton.style.position = "absolute";
@@ -68,7 +69,7 @@ function openRewardsModal() {
 
   // Create the iframe
   const iframe = document.createElement("iframe");
-  iframe.src = "https://yourwebsite.com"; // Replace with your desired URL
+  iframe.src = "https://yourwebsite.com"; // Replace with the desired URL
   iframe.style.width = "100%";
   iframe.style.height = "100%";
   iframe.style.border = "none";
@@ -76,15 +77,16 @@ function openRewardsModal() {
   // Append the iframe to the iframe container
   iframeContainer.appendChild(iframe);
 
-  // Append the iframe container to the modal background
+  // Append iframe container to modal background
   modalBackground.appendChild(iframeContainer);
 
-  // Append the modal background to the body
+  // Append modal background to the document body
   document.body.appendChild(modalBackground);
 
-  // Close modal on button click
+  // Event listener for closing the modal
   closeButton.addEventListener("click", function() {
     document.body.removeChild(modalBackground);
   });
 }
+
 

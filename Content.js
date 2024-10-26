@@ -1,11 +1,11 @@
 // Function to create and add the JustErikDemon Rewards button
 function addJustErikDemonButton() {
-    const sidebar = document.querySelector(".left-col-list"); // Select the sidebar
-    if (!sidebar) return; // If sidebar is not found, exit
+    const sidebarList = document.querySelector(".simplebar-content ul"); // Select the <ul> within the sidebar
+    if (!sidebarList) return; // If the list is not found, exit
 
     // Create a new list item
     const li = document.createElement("li");
-    li.style.display = "block"; // Make sure the list item is displayed
+    li.style.display = "block"; // Ensure the list item is displayed
 
     // Create a link for the button
     const a = document.createElement("a");
@@ -16,7 +16,7 @@ function addJustErikDemonButton() {
     // Create the content of the link
     const div = document.createElement("div");
     const spanIcon = document.createElement("span");
-    spanIcon.className = "icon-nav-giftcards"; // You can choose an appropriate icon class or leave it empty
+    spanIcon.className = "icon-nav-giftcards"; // Use an appropriate icon class
 
     const spanText = document.createElement("span");
     spanText.className = "font-header-2 dynamic-ellipsis-item";
@@ -30,9 +30,11 @@ function addJustErikDemonButton() {
     li.appendChild(a);
 
     // Insert the new button after the Home button
-    const homeButton = document.getElementById("nav-home");
+    const homeButton = sidebarList.querySelector("#nav-home");
     if (homeButton) {
-        sidebar.insertBefore(li, homeButton.nextSibling);
+        sidebarList.insertBefore(li, homeButton.nextSibling); // Insert the new button after the Home button
+    } else {
+        sidebarList.appendChild(li); // If Home button is not found, append to the end
     }
 }
 

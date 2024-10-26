@@ -5,7 +5,7 @@ function addJustErikDemonButton() {
 
     // Create a new list item
     const li = document.createElement("li");
-    li.style.display = "block";
+    li.style.display = "block"; // Make sure the list item is displayed
 
     // Create a link for the button
     const a = document.createElement("a");
@@ -34,16 +34,6 @@ function addJustErikDemonButton() {
     if (homeButton) {
         sidebar.insertBefore(li, homeButton.nextSibling);
     }
-
-    // Inject CSS styles dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-        .justErikDemon-btn .font-header-2 {
-            font-size: 12px; /* Adjust the size as needed */
-            white-space: nowrap; /* Prevent text from wrapping */
-        }
-    `;
-    document.head.appendChild(style);
 }
 
 // Run the function when the page loads

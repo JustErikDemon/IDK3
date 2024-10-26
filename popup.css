@@ -1,15 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-  width: 320px;
-  height: 450px;
-  padding: 10px;
-}
-
-#popup-content {
-  text-align: center;
-}
-
-iframe {
-  width: 100%;
-  border: none;
+.justErikDemon-btn .font-header-2 {
+    font-size: 12px; /* Adjust the size as needed */
+    white-space: nowrap; /* Prevent text from wrapping */
 }

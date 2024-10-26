@@ -1,6 +1,6 @@
 // Function to create and add the JustErikDemon Rewards button
 function addJustErikDemonButton() {
-    const sidebarList = document.querySelector(".simplebar-content ul"); // Select the <ul> within the sidebar
+    const sidebarList = document.querySelector(".simplebar-content .left-col-list"); // Select the <ul> within the sidebar
     if (!sidebarList) return; // If the list is not found, exit
 
     // Create a new list item
@@ -16,7 +16,7 @@ function addJustErikDemonButton() {
     // Create the content of the link
     const div = document.createElement("div");
     const spanIcon = document.createElement("span");
-    spanIcon.className = "icon-nav-giftcards"; // Use an appropriate icon class
+    spanIcon.className = "icon-nav-giftcards"; // Placeholder for the icon (if needed)
 
     const spanText = document.createElement("span");
     spanText.className = "font-header-2 dynamic-ellipsis-item";
@@ -40,6 +40,7 @@ function addJustErikDemonButton() {
 
 // Run the function when the page loads
 window.addEventListener('load', addJustErikDemonButton);
+
 
 
 

@@ -1,45 +1,40 @@
-// Function to create and add the JustErikDemon Rewards button
-function addJustErikDemonButton() {
-    const sidebarList = document.querySelector(".simplebar-content .left-col-list"); // Select the <ul> within the sidebar
-    if (!sidebarList) return; // If the list is not found, exit
+// Function to create and insert the JusteRIKDemon button
+function createJusteRIKDemonButton() {
+    // Create a new list item for the button
+    const buttonLI = document.createElement('li');
+    buttonLI.style.display = 'block';
 
-    // Create a new list item
-    const li = document.createElement("li");
-    li.style.display = "block"; // Ensure the list item is displayed
+    // Create the button HTML
+    const buttonHTML = `
+        <a class="justerikdemon-button dynamic-overflow-container text-nav" id="justeRIKDemonButton">
+            <div>
+                <span class="new-menu-icon icon-nav-charactercustomizer" style="transform:scale(0.85);"></span>
+            </div>
+            <span class="font-header-2 dynamic-ellipsis-item">JusteRIKDemon</span>
+        </a>
+    `;
+    buttonLI.innerHTML = buttonHTML;
 
-    // Create a link for the button
-    const a = document.createElement("a");
-    a.className = "dynamic-overflow-container text-nav justErikDemon-btn";
-    a.href = "https://www.youtube.com"; // Link to YouTube
-    a.target = "_blank"; // Open in new tab
+    // Wait for the sidebar to load
+    const sidebarList = document.querySelector('.left-col-list');
+    if (sidebarList) {
+        sidebarList.appendChild(buttonLI);
+        console.log('JusteRIKDemon Button added to the sidebar.');
 
-    // Create the content of the link
-    const div = document.createElement("div");
-    const spanIcon = document.createElement("span");
-    spanIcon.className = "icon-nav-giftcards"; // Placeholder for the icon (if needed)
-
-    const spanText = document.createElement("span");
-    spanText.className = "font-header-2 dynamic-ellipsis-item";
-    spanText.title = "JustErikDemon Rewards";
-    spanText.textContent = "JustErikDemon Rewards"; // Button text
-
-    // Append elements
-    div.appendChild(spanIcon);
-    a.appendChild(div);
-    a.appendChild(spanText);
-    li.appendChild(a);
-
-    // Insert the new button after the Home button
-    const homeButton = sidebarList.querySelector("#nav-home");
-    if (homeButton) {
-        sidebarList.insertBefore(li, homeButton.nextSibling); // Insert the new button after the Home button
+        // Add event listener to the button
+        document.getElementById('justeRIKDemonButton').addEventListener('click', () => {
+            alert('JusteRIKDemon button clicked!');
+            // You can add further functionality here
+        });
     } else {
-        sidebarList.appendChild(li); // If Home button is not found, append to the end
+        console.error('Sidebar not found. Retrying...');
+        // Retry after a short delay if sidebar not found
+        setTimeout(createJusteRIKDemonButton, 1000);
     }
 }
 
-// Run the function when the page loads
-window.addEventListener('load', addJustErikDemonButton);
+// Run the function to create the button
+createJusteRIKDemonButton();
 
 
 

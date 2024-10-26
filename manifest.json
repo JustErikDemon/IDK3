@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "BobRossRocks",
+  "name": "JustErikDemon Rewards",
   "version": "1.0.0",
   "description": "BobRossRocks - Custom YouTube Popup Extension",
   "permissions": ["activeTab"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/941px-Robux_2019_Logo_gold.svg.png",
+      "48": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/941px-Robux_2019_Logo_gold.svg.png",
+      "128": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Robux_2019_Logo_gold.svg/941px-Robux_2019_Logo_gold.svg.png"
     }
   },
   "content_scripts": [

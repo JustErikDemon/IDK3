@@ -12,7 +12,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],  // Adjust this to the specific URL where you want to inject the script
+      "matches": ["https://www.roblox.com/"],  // Adjust this to the specific URL where you want to inject the script
       "js": ["content.js"]
     }
   ],
